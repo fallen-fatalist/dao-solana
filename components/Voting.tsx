@@ -78,7 +78,6 @@ function Vote() {
   return (
     <div className={styles.App}>
       <header className="App-header">
-        <AppBar></AppBar>
         {isWalletConnected ? (
           <div className={styles.AppBody}>
             <button onClick={createVoteBank}>Create Vote Bank</button>
