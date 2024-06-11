@@ -3,30 +3,34 @@ import { LAMPORTS_PER_SOL } from '@solana/web3.js';
 import {FC, useEffect, useState } from 'react'
 
 export const BalanceDisplay: FC = () => {
-    const [balance, setBalance] = useState(0);
+    const [token, setToken] = useState(0);
     const { connection } = useConnection();
     const { publicKey } = useWallet();
 
     useEffect(() => {
         if (!connection || !publicKey) { return }
 
+        // TODO: Change to NFT token logic or remove
         // Ensure the balance updates after the transaction completes
         connection.onAccountChange(
             publicKey, 
             (updatedAccountInfo) => {
-                setBalance(updatedAccountInfo.lamports / LAMPORTS_PER_SOL)
+                setToken(updatedAccountInfo.lamports / LAMPORTS_PER_SOL)
             }, 
             'confirmed'
         )
 
+        // TODO: Change to NFT token update
         connection.getAccountInfo(publicKey).then(info => {
-            setBalance(info.lamports);
+            setToken(info.lamports);
         })
     }, [connection, publicKey])
 
+    // TODO: change 
     return (
         <div>
-            <p>{publicKey ? `Balance: ${balance / LAMPORTS_PER_SOL}` : ''}</p>
+            
+            <p>{publicKey ? `Token owner: ${token}` : ''}</p>
         </div>
     )
 }
