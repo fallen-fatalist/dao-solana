@@ -9,7 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@metaplex-foundation/js": "^0.20.1",
+    "@metaplex-foundation/digital-asset-standard-api": "^1.0.3",
+    "@metaplex-foundation/js": "^0.17.12",
+    "@metaplex-foundation/mpl-candy-machine": "^6.0.1",
+    "@metaplex-foundation/mpl-token-metadata": "^3.2.1",
+    "@metaplex-foundation/umi": "^0.9.1",
+    "@metaplex-foundation/umi-bundle-defaults": "^0.9.1",
+    "@metaplex/js": "^4.12.0",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
@@ -17,6 +23,7 @@
     "@solana/web3.js": "^1.92.3",
     "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
+    "dotenv": "^16.4.5",
     "next": "^14.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
